@@ -1,0 +1,275 @@
+{
+  "pins" : [
+    {
+      "identity" : "abseil-cpp-swiftpm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/abseil-cpp-SwiftPM.git",
+      "state" : {
+        "revision" : "583de9bd60f66b40e78d08599cc92036c2e7e4e1",
+        "version" : "0.20220203.2"
+      }
+    },
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
+      "identity" : "alamofireimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/AlamofireImage",
+      "state" : {
+        "revision" : "1eaf3b6c6882bed10f6e7b119665599dd2329aa1",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "aztabbarcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Minitour/AZTabBarController",
+      "state" : {
+        "revision" : "d7611ca3b15033b0a03550abaff7ce599da267fd",
+        "version" : "1.4.4"
+      }
+    },
+    {
+      "identity" : "boringssl-swiftpm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
+      "state" : {
+        "revision" : "dd3eda2b05a3f459fc3073695ad1b28659066eab",
+        "version" : "0.9.1"
+      }
+    },
+    {
+      "identity" : "charts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ChartsOrg/Charts",
+      "state" : {
+        "revision" : "dd9c72e3d7e751e769971092a6bd72d39198ae63",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "dpcharts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielepantaleone/DPCharts",
+      "state" : {
+        "revision" : "382f0c7f2df6c3da1532918a2fe2eb7f611170e9",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "easynotificationbadge",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Minitour/EasyNotificationBadge.git",
+      "state" : {
+        "revision" : "2774998af193a396b1842c0727fe52c2bd217ae2",
+        "version" : "1.2.5"
+      }
+    },
+    {
+      "identity" : "firebase-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/firebase-ios-sdk",
+      "state" : {
+        "revision" : "cfa854c9c1073c4d1b83b20dfcb1ef7ceb85388b",
+        "version" : "9.0.0"
+      }
+    },
+    {
+      "identity" : "googleappmeasurement",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleAppMeasurement.git",
+      "state" : {
+        "revision" : "6a3123fab90f3884167990bee9bb30097d99c98c",
+        "version" : "9.0.0"
+      }
+    },
+    {
+      "identity" : "googledatatransport",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleDataTransport.git",
+      "state" : {
+        "revision" : "a637d318ae7ae246b02d7305121275bc75ed5565",
+        "version" : "9.4.0"
+      }
+    },
+    {
+      "identity" : "googleutilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleUtilities.git",
+      "state" : {
+        "revision" : "57a1d307f42df690fdef2637f3e5b776da02aad6",
+        "version" : "7.13.3"
+      }
+    },
+    {
+      "identity" : "grpc-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/grpc/grpc-ios.git",
+      "state" : {
+        "revision" : "8440b914756e0d26d4f4d054a1c1581daedfc5b6",
+        "version" : "1.44.3-grpc"
+      }
+    },
+    {
+      "identity" : "gtm-session-fetcher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/gtm-session-fetcher.git",
+      "state" : {
+        "revision" : "4e9bbf2808b8fee444e84a48f5f3c12641987d3e",
+        "version" : "1.7.2"
+      }
+    },
+    {
+      "identity" : "iosdropdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jriosdev/iOSDropDown",
+      "state" : {
+        "revision" : "945c4f1945ed37a31055e812a5ee11a3d06e88ab",
+        "version" : "0.4.0"
+      }
+    },
+    {
+      "identity" : "kractivityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krimpedance/KRActivityIndicatorView.git",
+      "state" : {
+        "revision" : "925de8a9c15d9d7c2ca746dbe198549241b8b2b2",
+        "version" : "3.0.8"
+      }
+    },
+    {
+      "identity" : "krprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krimpedance/KRProgressHUD",
+      "state" : {
+        "revision" : "2d6b0246682fce2c8e226235c9cd6065d0b95e00",
+        "version" : "3.4.8"
+      }
+    },
+    {
+      "identity" : "leveldb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/leveldb.git",
+      "state" : {
+        "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
+        "version" : "1.22.5"
+      }
+    },
+    {
+      "identity" : "lzviewpager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ladmini/LZViewPager",
+      "state" : {
+        "revision" : "468a1661fe9071c4dc60e3b6527a82f35c501dad",
+        "version" : "1.3.2"
+      }
+    },
+    {
+      "identity" : "nanopb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/nanopb.git",
+      "state" : {
+        "revision" : "7ee9ef9f627d85cbe1b8c4f49a3ed26eed216c77",
+        "version" : "2.30908.0"
+      }
+    },
+    {
+      "identity" : "objectmapper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tristanhimmelman/ObjectMapper",
+      "state" : {
+        "revision" : "6021c6035e83a306047348666f6400dc61445d3b",
+        "version" : "4.4.3"
+      }
+    },
+    {
+      "identity" : "promises",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/promises.git",
+      "state" : {
+        "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
+        "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "pull-to-refresh",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/eggswift/pull-to-refresh",
+      "state" : {
+        "revision" : "a858aaeb44abc6428af916e8496429d244fac053",
+        "version" : "2.9.3"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "21d1dc412cfecbe6e34f1f4c4eb88d3f912654a6"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "e55176982ed9154899a39693d24609645b81586b",
+        "version" : "14.3.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift",
+      "state" : {
+        "revision" : "0a97dda4dd0b77449e55b997cf636651e6187634",
+        "version" : "10.49.0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "swift-protobuf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-protobuf.git",
+      "state" : {
+        "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
+        "version" : "1.26.0"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON",
+      "state" : {
+        "revision" : "af76cf3ef710b6ca5f8c05f3a31307d44a3c5828",
+        "version" : "5.0.2"
+      }
+    },
+    {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scalessec/Toast-Swift",
+      "state" : {
+        "revision" : "ddccd20d6fb718448d9b179c454c561653fda7d5",
+        "version" : "5.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}
