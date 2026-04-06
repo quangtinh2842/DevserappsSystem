@@ -23,7 +23,7 @@ class SensorCell: UICollectionViewCell {
   func updateCell(withData sensor: Sensor) {
     _sensorData = sensor
     
-    if let symbolURL = sensor.symbolURL {
+    if let symbolURL = sensor.getSymbolURL {
       _imgSymbol.af.setImage(withURL: symbolURL)
     } else {
       _imgSymbol.image = UIImage(named: "Placeholder Image")

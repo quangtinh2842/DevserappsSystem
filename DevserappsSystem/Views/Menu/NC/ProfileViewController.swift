@@ -90,7 +90,7 @@ class ProfileViewController: UITableViewController {
     _savedUser = MUser(user: UserStore.currentUser)
     _editedUser = MUser(user: UserStore.currentUser)
     
-    if let photoURL = UserStore.currentUser.photoURL {
+    if let photoURL = UserStore.currentUser.getPhotoURL {
       _imgProfilePhoto.af.setImage(withURL: photoURL)
     } else {
       _imgProfilePhoto.image = UIImage(systemName: "person.circle")
@@ -181,7 +181,7 @@ class ProfileViewController: UITableViewController {
     alert.addTextField { [weak self] textField in
       textField.placeholder = "https://www"
       textField.clearButtonMode = .whileEditing
-      textField.text = self?._editedUser.photoURL?.absoluteString
+      textField.text = self?._editedUser.photoURL
     }
     
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -189,14 +189,14 @@ class ProfileViewController: UITableViewController {
       let photoURLString = alert.textFields?.first?.text ?? ""
       
       if let photoURL = URL(string: photoURLString) {
-        self?._editedUser.photoURL = photoURL
+        self?._editedUser.photoURL = photoURLString
         self?._imgProfilePhoto.af.setImage(withURL: photoURL)
       } else {
         self?._editedUser.photoURL = nil
         self?._imgProfilePhoto.image = UIImage(systemName: "person.circle")
       }
       
-      self?._btnSave.isEnabled = self?._editedUser.photoURL?.absoluteString != self?._savedUser.photoURL?.absoluteString
+      self?._btnSave.isEnabled = self?._editedUser.photoURL != self?._savedUser.photoURL
     }
     
     alert.addAction(cancelAction)

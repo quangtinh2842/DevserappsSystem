@@ -7,19 +7,14 @@
 
 import Foundation
 import ObjectMapper
-import RealmSwift
 
-class About: Object, Mappable {
-  @objc var version: String?
-  var resources = List<Resource>()
-  
-  override init() {
-    super.init()
-  }
-  
+class About: Mappable {
+  var version: String?
+  var resources: [Resource]?
+
   init(about: About?) {
     self.version = about?.version
-    self.resources = about?.resources ?? List<Resource>()
+    self.resources = about?.resources
   }
   
   required init?(map: ObjectMapper.Map) {
@@ -35,15 +30,15 @@ class About: Object, Mappable {
   
   func mapping(map: ObjectMapper.Map) {
     version        <- map["version"]
-    resources      <- (map["resources"], ListTransform<Resource>())
+    resources      <- map["resources"]
   }
 }
 
-class Resource: Object, Mappable {
-  @objc dynamic var name: String?
-  @objc dynamic var url: URL?
+class Resource: Mappable {
+  var name: String?
+  var url: String?
   
-  init(name: String? = nil, url: URL?) {
+  init(name: String? = nil, url: String?) {
     self.name = name
     self.url = url
   }
@@ -66,6 +61,6 @@ class Resource: Object, Mappable {
   
   func mapping(map: ObjectMapper.Map) {
     name       <- map["name"]
-    url        <- (map["url"], URLTransform())
+    url        <- map["url"]
   }
 }

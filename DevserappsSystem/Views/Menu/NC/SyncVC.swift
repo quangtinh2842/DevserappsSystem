@@ -72,16 +72,16 @@ class SyncVC: UITableViewController {
   
   @IBAction func handleSyncBtnTapped(_ sender: Any) {
     do {
-      SettingsStore.settings.sync = sync
-      SettingsStore.settings.sync?.settings.append(Date())
+      SettingsStore.currentSettings.sync = sync
+      SettingsStore.currentSettings.sync?.settings.append(Date())
       KRProgressHUD.show()
-      let _ = try SettingsStore.settings.save { [weak self] error, _ in
+      let _ = try SettingsStore.currentSettings.save { [weak self] error, _ in
         KRProgressHUD.dismiss()
         if error != nil {
-          SettingsStore.settings.sync?.settings.removeLast()
+          SettingsStore.currentSettings.sync?.settings.removeLast()
           self?._presentBasicAlert(title: "Error", message: error!.localizedDescription)
         } else {
-          self?.sync = Sync(sync: SettingsStore.settings.sync)
+          self?.sync = Sync(sync: SettingsStore.currentSettings.sync)
           if let lastSync = self?.sync?.last() {
             self?._lblLastSync.text = lastSync.ddMMyyyy()+", "+lastSync.hhmm()
           }
@@ -93,7 +93,7 @@ class SyncVC: UITableViewController {
       }
     } catch {
       KRProgressHUD.dismiss()
-      SettingsStore.settings.sync?.settings.removeLast()
+      SettingsStore.currentSettings.sync?.settings.removeLast()
       _presentBasicAlert(title: "Error", message: error.localizedDescription)
     }
   }

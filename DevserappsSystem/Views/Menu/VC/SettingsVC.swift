@@ -49,13 +49,13 @@ class SettingsViewController: UITableViewController {
   }
   
   private func _populateDataFromDefaultSettings() {
-    if let isAllOn = SettingsStore.settings.notifications?.isAllOn?.toBool() {
+    if let isAllOn = SettingsStore.currentSettings.notifications?.isAllOn?.toBool() {
       _lblNotifications.text = isAllOn ? "On" : "Off"
     }
-    _lblAppearance.text = SettingsStore.settings.appearance
-    _lblLanguage.text = SettingsStore.settings.language
-    _lblLastSyncTime.text = SettingsStore.settings.sync?.last()?.ddMMyyyy() ?? ""
-    _lblVersion.text = SettingsStore.settings.about?.version ?? ""
+    _lblAppearance.text = SettingsStore.currentSettings.appearance
+    _lblLanguage.text = SettingsStore.currentSettings.language
+    _lblLastSyncTime.text = SettingsStore.currentSettings.sync?.last()?.ddMMyyyy() ?? ""
+    _lblVersion.text = SettingsStore.currentSettings.about?.version ?? ""
   }
 }
 
@@ -65,7 +65,7 @@ extension SettingsViewController {
       let notificationsNC = StoryboardHelper.newNotificationsSettingsNC()
       if let vc = notificationsNC.viewControllers.first as? NotificationsSettingsVC {
         vc.delegate = self
-        vc.notifications = Notifications(notifications: SettingsStore.settings.notifications)
+        vc.notifications = Notifications(notifications: SettingsStore.currentSettings.notifications)
         navigationController?.pushViewController(vc, animated: true)
       }
     }
@@ -78,7 +78,7 @@ extension SettingsViewController {
       }
       if let vc = appearanceNC.viewControllers.first as? AppearanceVC {
         vc.delegate = self
-        vc.appearance = SettingsStore.settings.appearance
+        vc.appearance = SettingsStore.currentSettings.appearance
       }
       self.present(appearanceNC, animated: true)
     }
@@ -91,7 +91,7 @@ extension SettingsViewController {
       }
       if let vc = languageNC.viewControllers.first as? LanguageVC {
         vc.delegate = self
-        vc.language = SettingsStore.settings.language
+        vc.language = SettingsStore.currentSettings.language
       }
       self.present(languageNC, animated: true)
     }
@@ -104,7 +104,7 @@ extension SettingsViewController {
       }
       if let vc = syncNC.viewControllers.first as? SyncVC {
         vc.delegate = self
-        vc.sync = Sync(sync: SettingsStore.settings.sync)
+        vc.sync = Sync(sync: SettingsStore.currentSettings.sync)
       }
       self.present(syncNC, animated: true)
     }
@@ -112,7 +112,7 @@ extension SettingsViewController {
     if indexPath.section == 0 && indexPath.row == 4 {
       let aboutNC = StoryboardHelper.newAboutNC()
       if let vc = aboutNC.viewControllers.first as? AboutVC {
-        vc.about = About(about: SettingsStore.settings.about)
+        vc.about = About(about: SettingsStore.currentSettings.about)
         navigationController?.pushViewController(vc, animated: true)
       }
     }
@@ -121,7 +121,7 @@ extension SettingsViewController {
       let problemsToProviderNC = StoryboardHelper.newProblemsToProviderNC()
       if let vc = problemsToProviderNC.viewControllers.first as? ProblemsToProviderVC {
         vc.title = "App feedbacks"
-        vc.problems = SettingsStore.settings.appFeedbacks
+        vc.problems = SettingsStore.currentSettings.appFeedbacks
         navigationController?.pushViewController(vc, animated: true)
       }
     }
@@ -130,7 +130,7 @@ extension SettingsViewController {
       let problemsToProviderNC = StoryboardHelper.newProblemsToProviderNC()
       if let vc = problemsToProviderNC.viewControllers.first as? ProblemsToProviderVC {
         vc.title = "Bug reports"
-        vc.problems = SettingsStore.settings.bugReports
+        vc.problems = SettingsStore.currentSettings.bugReports
         navigationController?.pushViewController(vc, animated: true)
       }
     }
@@ -139,7 +139,7 @@ extension SettingsViewController {
       let problemsToProviderNC = StoryboardHelper.newProblemsToProviderNC()
       if let vc = problemsToProviderNC.viewControllers.first as? ProblemsToProviderVC {
         vc.title = "Help & Support requests"
-        vc.problems = SettingsStore.settings.helpAndSupportRequests
+        vc.problems = SettingsStore.currentSettings.helpAndSupportRequests
         navigationController?.pushViewController(vc, animated: true)
       }
     }
@@ -148,7 +148,7 @@ extension SettingsViewController {
 
 extension SettingsViewController: NotificationsSettingsDelegate {
   func notificationsSettingsVC(notificationsSettingsVC: NotificationsSettingsVC, didEditNotificationsSettings editedNotificationsSettings: Notifications) {
-    SettingsStore.settings.notifications = Notifications(notifications: editedNotificationsSettings)
+    SettingsStore.currentSettings.notifications = Notifications(notifications: editedNotificationsSettings)
     if let isAllOn = editedNotificationsSettings.isAllOn?.toBool() {
       _lblNotifications.text = isAllOn ? "On" : "Off"
     }
@@ -157,21 +157,21 @@ extension SettingsViewController: NotificationsSettingsDelegate {
 
 extension SettingsViewController: AppearanceDelegate {
   func appearanceVC(appearanceVC: AppearanceVC, didSelect selectedAppearance: String) {
-    SettingsStore.settings.appearance = selectedAppearance
+    SettingsStore.currentSettings.appearance = selectedAppearance
     _lblAppearance.text = selectedAppearance
   }
 }
 
 extension SettingsViewController: LanguageDelegate {
   func languageVC(languageVC: LanguageVC, didSelect selectedLanguage: String) {
-    SettingsStore.settings.language = selectedLanguage
+    SettingsStore.currentSettings.language = selectedLanguage
     _lblLanguage.text = selectedLanguage
   }
 }
 
 extension SettingsViewController: SyncDelegate {
   func syncVC(syncVC: SyncVC, didEditSync synced: Sync) {
-    SettingsStore.settings.sync = Sync(sync: synced)
+    SettingsStore.currentSettings.sync = Sync(sync: synced)
     _lblLastSyncTime.text = synced.last()?.ddMMyyyy() ?? ""
   }
 }

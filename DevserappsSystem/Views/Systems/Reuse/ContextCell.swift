@@ -15,7 +15,6 @@ class ContextCell: UICollectionViewCell {
   
   private var _contextData: Context!
   
-  
   var stringContent: String! // need to remove
   
   func setupCellView() {
@@ -28,7 +27,7 @@ class ContextCell: UICollectionViewCell {
   func updateCell(withData context: Context) {
     _contextData = context
     
-    if let symbolURL = context.symbolURL {
+    if let symbolURL = context.getSymbolURL {
       _imgSymbol.af.setImage(withURL: symbolURL)
     } else {
       _imgSymbol.image = UIImage(named: "Placeholder Image")

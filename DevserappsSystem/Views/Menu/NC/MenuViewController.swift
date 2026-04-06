@@ -56,7 +56,7 @@ class MenuViewController: UIViewController {
   }
   
   private func _populateCurrentUserData() {
-    if let photoURL = UserStore.currentUser.photoURL {
+    if let photoURL = UserStore.currentUser.getPhotoURL {
       _imgProfilePhoto.af.setImage(withURL: photoURL)
     } else {
       _imgProfilePhoto.image = UIImage(systemName: "person.circle")
@@ -96,7 +96,7 @@ extension MenuViewController: LZViewPagerDelegate, LZViewPagerDataSource {
 
 extension MenuViewController: AccountDelegate {
   func accountViewController(accountVC: AccountViewController, userData: MUser) {
-    if let photoURL = userData.photoURL {
+    if let photoURL = userData.getPhotoURL {
       _imgProfilePhoto.af.setImage(withURL: photoURL)
     } else {
       _imgProfilePhoto.image = UIImage(systemName: "person.circle")

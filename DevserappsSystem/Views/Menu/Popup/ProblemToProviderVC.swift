@@ -75,34 +75,34 @@ class ProblemToProviderVC: UITableViewController {
     
     if title == "New app feedback" {
       newProblem.subject = "App feedbacks"
-      SettingsStore.settings.appFeedbacks.append(newProblem)
+      SettingsStore.currentSettings.appFeedbacks.append(newProblem)
     } else if title == "New bug report" {
       newProblem.subject = "Bug reports"
-      SettingsStore.settings.bugReports.append(newProblem)
+      SettingsStore.currentSettings.bugReports.append(newProblem)
     } else if title == "New help & support request" {
       newProblem.subject = "Help & Support requests"
-      SettingsStore.settings.helpAndSupportRequests.append(newProblem)
+      SettingsStore.currentSettings.helpAndSupportRequests.append(newProblem)
     }
     
     do {
-      let _ = try SettingsStore.settings.save { [weak self] error, _ in
+      let _ = try SettingsStore.currentSettings.save { [weak self] error, _ in
         if error != nil {
           if self?.title == "New app feedback" {
-            SettingsStore.settings.appFeedbacks.removeLast()
+            SettingsStore.currentSettings.appFeedbacks.removeLast()
           } else if self?.title == "New bug report" {
-            SettingsStore.settings.bugReports.removeLast()
+            SettingsStore.currentSettings.bugReports.removeLast()
           } else if self?.title == "New help & support request" {
-            SettingsStore.settings.helpAndSupportRequests.removeLast()
+            SettingsStore.currentSettings.helpAndSupportRequests.removeLast()
           }
           self?._presentBasicAlert(title: "Error", message: error?.localizedDescription)
         } else {
           var problem: Problem!
           if self?.title == "New app feedback" {
-            problem = SettingsStore.settings.appFeedbacks.first
+            problem = SettingsStore.currentSettings.appFeedbacks.first
           } else if self?.title == "New bug report" {
-            problem = SettingsStore.settings.bugReports.first
+            problem = SettingsStore.currentSettings.bugReports.first
           } else if self?.title == "New help & support request" {
-            problem = SettingsStore.settings.helpAndSupportRequests.first
+            problem = SettingsStore.currentSettings.helpAndSupportRequests.first
           }
           if self != nil {
             self?.delegate?.problemToProviderVC?(problemToProviderVC: self!, didSendProblem: problem)
@@ -112,11 +112,11 @@ class ProblemToProviderVC: UITableViewController {
       }
     } catch {
       if title == "New app feedback" {
-        SettingsStore.settings.appFeedbacks.removeLast()
+        SettingsStore.currentSettings.appFeedbacks.removeLast()
       } else if title == "New bug report" {
-        SettingsStore.settings.bugReports.removeLast()
+        SettingsStore.currentSettings.bugReports.removeLast()
       } else if title == "New help & support request" {
-        SettingsStore.settings.helpAndSupportRequests.removeLast()
+        SettingsStore.currentSettings.helpAndSupportRequests.removeLast()
       }
       _presentBasicAlert(title: "Error", message: error.localizedDescription)
     }

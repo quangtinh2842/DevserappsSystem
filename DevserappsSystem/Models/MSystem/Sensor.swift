@@ -11,10 +11,18 @@ import ObjectMapper
 class Sensor: NSObject, Mappable {
   @objc var title: String?
   @objc var value: String?
-  @objc var symbolURL: URL?
+  @objc var symbolURL: String?
   @objc var valueType: String?
   @objc var unit: String?
   @objc var time: Date?
+  
+  var getSymbolURL: URL? {
+    if symbolURL == nil {
+      return nil
+    } else {
+      return URL(string: symbolURL!)
+    }
+  }
   
   init(sensor: Sensor) {
     super.init()
@@ -42,7 +50,7 @@ class Sensor: NSObject, Mappable {
   func mapping(map: Map) {
     title        <- map["title"]
     value        <- map["value"]
-    symbolURL    <- (map["symbolURL"], URLTransform())
+    symbolURL    <- map["symbolURL"]
     valueType    <- map["valueType"]
     unit         <- map["unit"]
     time         <- map["time"]
@@ -65,7 +73,7 @@ class Sensor: NSObject, Mappable {
       return true
     }
     
-    if self.symbolURL?.absoluteString != sensor?.symbolURL?.absoluteString {
+    if self.symbolURL != sensor?.symbolURL {
       return true
     }
     

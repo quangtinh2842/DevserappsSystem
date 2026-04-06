@@ -22,8 +22,6 @@
 		FA0B486F2D78513900A9E9DB /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B486E2D78513900A9E9DB /* MUser.swift */; };
 		FA0F2C462D9FD80F0022EAD3 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F2C452D9FD80F0022EAD3 /* Problem.swift */; };
 		FA14F1F72D897CE8004F73C4 /* BasicControlPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14F1F62D897CE8004F73C4 /* BasicControlPopupViewController.swift */; };
-		FA15B7E52DA9529400BC0DE9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B7E42DA9529400BC0DE9 /* RealmManager.swift */; };
-		FA15B7E82DA9560100BC0DE9 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15B7E72DA9560100BC0DE9 /* ListTransform.swift */; };
 		FA1C8D442D82CCC900F318A4 /* SystemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D432D82CCC900F318A4 /* SystemCell.swift */; };
 		FA1C8D462D82D05D00F318A4 /* MSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D452D82D05D00F318A4 /* MSystem.swift */; };
 		FA1C8D482D82D79000F318A4 /* MSystemTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D472D82D79000F318A4 /* MSystemTopic.swift */; };
@@ -42,8 +40,6 @@
 		FA280BC82D8D6E46004DEB37 /* AppearanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280BC72D8D6E46004DEB37 /* AppearanceCell.swift */; };
 		FA286D0A2DA8BB5F008A77A9 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = FA286D092DA8BB5F008A77A9 /* Reachability */; };
 		FA286D0D2DA8C76A008A77A9 /* NoConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286D0C2DA8C76A008A77A9 /* NoConnectionVC.swift */; };
-		FA286D102DA8CF18008A77A9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA286D0F2DA8CF18008A77A9 /* Realm */; };
-		FA286D122DA8CF18008A77A9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA286D112DA8CF18008A77A9 /* RealmSwift */; };
 		FA29F87B2D9444D900234DB5 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F87A2D9444D900234DB5 /* PhoneNumber.swift */; };
 		FA2C49772D8ABC2200F3CF52 /* TimeToActiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C49762D8ABC2200F3CF52 /* TimeToActiveVC.swift */; };
 		FA2C497B2D8B0CAC00F3CF52 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C497A2D8B0CAC00F3CF52 /* SettingsVC.swift */; };
@@ -73,7 +69,6 @@
 		FA4B86DA2D743828005F1A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B86D92D743828005F1A69 /* SceneDelegate.swift */; };
 		FA4C1CAE2D7609F4001C6053 /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C1CAD2D7609F4001C6053 /* EmailVerificationViewController.swift */; };
 		FA4C1CB02D7609FA001C6053 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C1CAF2D7609FA001C6053 /* PasswordResetViewController.swift */; };
-		FA5E4CDC2D749D63009C223A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5E4CDB2D749D63009C223A /* GoogleService-Info.plist */; };
 		FA5E4CDF2D74A01B009C223A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E4CDE2D74A01B009C223A /* FirebaseAuth */; };
 		FA5E4CE12D74A01B009C223A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E4CE02D74A01B009C223A /* FirebaseDatabase */; };
 		FA5E4CE32D74A01B009C223A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E4CE22D74A01B009C223A /* FirebaseDatabaseSwift */; };
@@ -89,6 +84,7 @@
 		FA8586512D8858DB000ECEB5 /* LZViewPager in Frameworks */ = {isa = PBXBuildFile; productRef = FA8586502D8858DB000ECEB5 /* LZViewPager */; };
 		FA8CFDBE2D9E7C6F00782E61 /* ResourcesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFDBD2D9E7C6F00782E61 /* ResourcesVC.swift */; };
 		FA8CFDC02D9E7DA400782E61 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFDBF2D9E7DA400782E61 /* ResourceCell.swift */; };
+		FA8D79902F67C51A0060B9E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8D798F2F67C5190060B9E0 /* GoogleService-Info.plist */; };
 		FA95F04D2D8E65C2006022DC /* ErasedListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95F04C2D8E65C2006022DC /* ErasedListPopupVC.swift */; };
 		FA9B031B2D92F3DB00CF6E02 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B031A2D92F3DB00CF6E02 /* SettingsStore.swift */; };
 		FAB4C66F2D9A43E40052DD83 /* NotificationsSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C66E2D9A43E40052DD83 /* NotificationsSettingsVC.swift */; };
@@ -129,8 +125,6 @@
 		FA0B486E2D78513900A9E9DB /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		FA0F2C452D9FD80F0022EAD3 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		FA14F1F62D897CE8004F73C4 /* BasicControlPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlPopupViewController.swift; sourceTree = "<group>"; };
-		FA15B7E42DA9529400BC0DE9 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		FA15B7E72DA9560100BC0DE9 /* ListTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
 		FA1C8D432D82CCC900F318A4 /* SystemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCell.swift; sourceTree = "<group>"; };
 		FA1C8D452D82D05D00F318A4 /* MSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSystem.swift; sourceTree = "<group>"; };
 		FA1C8D472D82D79000F318A4 /* MSystemTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSystemTopic.swift; sourceTree = "<group>"; };
@@ -173,7 +167,6 @@
 		FA4B86D92D743828005F1A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA4C1CAD2D7609F4001C6053 /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
 		FA4C1CAF2D7609FA001C6053 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
-		FA5E4CDB2D749D63009C223A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5E4CEB2D74A362009C223A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA5E4CF32D74BBB8009C223A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FA6D97862D7CA1EA00C1D8B2 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +174,7 @@
 		FA7EFDA82D7B2A64002C0769 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		FA8CFDBD2D9E7C6F00782E61 /* ResourcesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesVC.swift; sourceTree = "<group>"; };
 		FA8CFDBF2D9E7DA400782E61 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
+		FA8D798F2F67C5190060B9E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA95F04C2D8E65C2006022DC /* ErasedListPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasedListPopupVC.swift; sourceTree = "<group>"; };
 		FA9B031A2D92F3DB00CF6E02 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		FAB4C66E2D9A43E40052DD83 /* NotificationsSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsVC.swift; sourceTree = "<group>"; };
@@ -209,14 +203,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA286D122DA8CF18008A77A9 /* RealmSwift in Frameworks */,
 				FA3DBDF32D7F59F00046CD3A /* SwiftyJSON in Frameworks */,
 				FA454A462D7D6ADC009DD807 /* MapKit.framework in Frameworks */,
 				FA04EDF82D8C5C0D00C7B30C /* AZTabBarController in Frameworks */,
 				FA1D39CA2D79A7150020C977 /* ESPullToRefresh in Frameworks */,
 				FA5E4CEF2D74A87D009C223A /* KRProgressHUD in Frameworks */,
 				FAE6FC772D7DF70F0064F1A1 /* iOSDropDown in Frameworks */,
-				FA286D102DA8CF18008A77A9 /* Realm in Frameworks */,
 				FA286D0A2DA8BB5F008A77A9 /* Reachability in Frameworks */,
 				FA27550E2D770B1700487E04 /* AlamofireImage in Frameworks */,
 				FA349C2F2DA819720068CBE2 /* DPCharts in Frameworks */,
@@ -254,6 +246,7 @@
 		FA01FC6C2D7372590005E15D /* DevserappsSystem */ = {
 			isa = PBXGroup;
 			children = (
+				FA8D798F2F67C5190060B9E0 /* GoogleService-Info.plist */,
 				FAFDA5E62DA50B63008073F5 /* Note.txt */,
 				FAF494352DAF4E8D0051EE99 /* README.md */,
 				FA01FC6D2D7372590005E15D /* AppDelegate.swift */,
@@ -264,7 +257,6 @@
 				FA4B86B32D743684005F1A69 /* Views */,
 				FA01FC732D7372590005E15D /* Main.storyboard */,
 				FAEC675A2D8BFE5100FA05A7 /* Device.storyboard */,
-				FA5E4CDB2D749D63009C223A /* GoogleService-Info.plist */,
 				FA01FC762D73725B0005E15D /* Assets.xcassets */,
 				FA01FC782D73725B0005E15D /* LaunchScreen.storyboard */,
 				FA01FC7B2D73725B0005E15D /* Info.plist */,
@@ -425,7 +417,6 @@
 				FA3DBDEF2D7F59030046CD3A /* AddressStore.swift */,
 				FA24BFE32D93A9D30024FA53 /* CountryCodeStore.swift */,
 				FA7EFDA62D7AEECE002C0769 /* StoryboardHelper.swift */,
-				FA15B7E72DA9560100BC0DE9 /* ListTransform.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -515,7 +506,6 @@
 		FA4B86B22D74367E005F1A69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA15B7E42DA9529400BC0DE9 /* RealmManager.swift */,
 				FA0B48692D783C0300A9E9DB /* MBase.swift */,
 				FA2D298E2D843C4500C93D5C /* MUser */,
 				FA2D298F2D843C5600C93D5C /* MSystem */,
@@ -617,8 +607,6 @@
 				FA04EDF72D8C5C0D00C7B30C /* AZTabBarController */,
 				FA349C2E2DA819720068CBE2 /* DPCharts */,
 				FA286D092DA8BB5F008A77A9 /* Reachability */,
-				FA286D0F2DA8CF18008A77A9 /* Realm */,
-				FA286D112DA8CF18008A77A9 /* RealmSwift */,
 			);
 			productName = DevserappsSystem;
 			productReference = FA01FC6A2D7372590005E15D /* DevserappsSystem.app */;
@@ -662,7 +650,6 @@
 				FA349C262DA811260068CBE2 /* XCRemoteSwiftPackageReference "Charts" */,
 				FA349C2D2DA819720068CBE2 /* XCRemoteSwiftPackageReference "DPCharts" */,
 				FA286D082DA8BB5F008A77A9 /* XCRemoteSwiftPackageReference "Reachability" */,
-				FA286D0E2DA8CF18008A77A9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FA01FC6B2D7372590005E15D /* Products */;
 			projectDirPath = "";
@@ -679,12 +666,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA01FC7A2D73725B0005E15D /* LaunchScreen.storyboard in Resources */,
-				FA5E4CDC2D749D63009C223A /* GoogleService-Info.plist in Resources */,
 				FAFDA5E72DA50B63008073F5 /* Note.txt in Resources */,
 				FAF494362DAF4E8D0051EE99 /* README.md in Resources */,
 				FA01FC772D73725B0005E15D /* Assets.xcassets in Resources */,
 				FAEC675B2D8BFE5100FA05A7 /* Device.storyboard in Resources */,
 				FA01FC752D7372590005E15D /* Main.storyboard in Resources */,
+				FA8D79902F67C51A0060B9E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +706,6 @@
 				FAB4C6752D9A44F20052DD83 /* Sync.swift in Sources */,
 				FA446FE12D795CE700C755E7 /* HardToHandleErrorViewController.swift in Sources */,
 				FAF599A52D89C6F2007F1B4B /* HistoryCell.swift in Sources */,
-				FA15B7E82DA9560100BC0DE9 /* ListTransform.swift in Sources */,
 				FA3DA05D2D7F39A0008F2CEA /* SearchPopupViewController.swift in Sources */,
 				FAF494382DAF53C40051EE99 /* CountryCodesVC.swift in Sources */,
 				FA0B486F2D78513900A9E9DB /* MUser.swift in Sources */,
@@ -764,7 +750,6 @@
 				FA3DBDF02D7F59040046CD3A /* AddressStore.swift in Sources */,
 				FA01FC6E2D7372590005E15D /* AppDelegate.swift in Sources */,
 				FA1F227E2D75B6ED0083BB10 /* ProfileViewController.swift in Sources */,
-				FA15B7E52DA9529400BC0DE9 /* RealmManager.swift in Sources */,
 				FAB4C6732D9A446D0052DD83 /* SyncVC.swift in Sources */,
 				FA6D97872D7CA1EA00C1D8B2 /* AddressViewController.swift in Sources */,
 				FA2C497D2D8B18C500F3CF52 /* AccountViewController.swift in Sources */,
@@ -917,14 +902,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QJRRV6NS4W;
+				DEVELOPMENT_TEAM = R3XPH5TX6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DevserappsSystem/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dsystem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -934,7 +920,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devserapps-c04be.web.app.DevserappsSystem";
+				PRODUCT_BUNDLE_IDENTIFIER = "soreninisngo.devserapps-system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -947,14 +933,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QJRRV6NS4W;
+				DEVELOPMENT_TEAM = R3XPH5TX6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DevserappsSystem/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dsystem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -964,7 +951,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devserapps-c04be.web.app.DevserappsSystem";
+				PRODUCT_BUNDLE_IDENTIFIER = "soreninisngo.devserapps-system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1034,14 +1021,6 @@
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		FA286D0E2DA8CF18008A77A9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				kind = exactVersion;
-				version = 10.49.0;
 			};
 		};
 		FA349C262DA811260068CBE2 /* XCRemoteSwiftPackageReference "Charts" */ = {
@@ -1135,16 +1114,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA286D082DA8BB5F008A77A9 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
-		};
-		FA286D0F2DA8CF18008A77A9 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA286D0E2DA8CF18008A77A9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		FA286D112DA8CF18008A77A9 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA286D0E2DA8CF18008A77A9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		FA349C2E2DA819720068CBE2 /* DPCharts */ = {
 			isa = XCSwiftPackageProductDependency;

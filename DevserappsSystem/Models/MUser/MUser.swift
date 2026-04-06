@@ -11,21 +11,28 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import ObjectMapper
-import RealmSwift
 
-class MUser: Object, Mappable {
-  @objc dynamic var uid: String? = ""
-  var providerID: String?
-  var displayName: String?
-  var email: String?
-  var photoURL: URL?
-  var name: Name?
-  var dateOfBirth: Date?
-  var address: Address?
-  var phoneNumber: PhoneNumber?
-  var settingsID: String?
+class MUser: MBase {
+  @objc var uid: String?
+  @objc var providerID: String?
+  @objc var displayName: String?
+  @objc var email: String?
+  @objc var photoURL: String?
+  @objc var name: Name?
+  @objc var dateOfBirth: Date?
+  @objc var address: Address?
+  @objc var phoneNumber: PhoneNumber?
+  @objc var settingsID: String?
   
-  class func collectionName() -> String {
+  var getPhotoURL: URL? {
+    if photoURL == nil {
+      return nil
+    } else {
+      return URL(string: photoURL!)
+    }
+  }
+  
+  override class func collectionName() -> String {
     return "synced_users"
   }
   
@@ -33,7 +40,7 @@ class MUser: Object, Mappable {
     return "uid"
   }
   
-  class func mapObject(jsonObject: NSDictionary) -> MUser? {
+  override class func mapObject(jsonObject: NSDictionary) -> MBase? {
     return Mapper<MUser>().map(JSONObject: jsonObject)
   }
   
@@ -82,6 +89,8 @@ class MUser: Object, Mappable {
   }
   
   required init?(map: ObjectMapper.Map) {
+    super.init()
+    
     let attributes = ["uid", "providerID"]
     let validations = attributes.map {
       map[$0].currentValue != nil
@@ -92,17 +101,17 @@ class MUser: Object, Mappable {
     }
   }
   
-  func mapping(map: ObjectMapper.Map) {
+  override func mapping(map: ObjectMapper.Map) {
     uid         <- map["uid"]
     providerID  <- map["providerID"]
     displayName <- map["displayName"]
     email       <- map["email"]
-    photoURL    <- (map["photoURL"], URLTransform())
+    photoURL    <- map["photoURL"]
     
     // more custom
     name        <- map["name"]
     dateOfBirth <- (map["dateOfBirth"], DateTransform())
-    address     <- map["addressID"]
+    address     <- map["address"]
     phoneNumber <- map["phoneNumber"]
     settingsID  <- map["settingsID"]
   }
@@ -124,7 +133,7 @@ class MUser: Object, Mappable {
       return true
     }
     
-    if self.photoURL?.absoluteString != user?.photoURL?.absoluteString {
+    if self.photoURL != user?.photoURL {
       return true
     }
     
@@ -163,7 +172,7 @@ class MUser: Object, Mappable {
     return "<MUser Id: \(self.uid!) - Display name: \(self.displayName ?? "N/A")>"
   }
   
-  func validate() -> (ModelValidationError, String?) {
+  override func validate() -> (ModelValidationError, String?) {
     if self.uid == nil || self.providerID == nil {
       return (.InvalidId, "uid, providerID")
     }
@@ -175,136 +184,16 @@ class MUser: Object, Mappable {
     return (.Valid, nil)
   }
   
-  class func allUsersExceptCurrent(completion handler: @escaping CollectionQueryResultHandler2) {
+  class func allUsersExceptCurrent(completion handler: @escaping (Error?, [MUser]) -> Void) {
     MUser.query { (results, error) in
       if error != nil {
-        handler([:], error)
+        handler(error, [])
       } else {
         let currentUser = Auth.auth().currentUser
-        let usersExceptCurrent = results.filter { $0.value["uid"] as? String != currentUser?.uid }
-        handler(usersExceptCurrent, nil)
+        let allUsers = results as! [MUser]
+        let usersExceptCurrent = allUsers.filter { $0.uid != currentUser?.uid }
+        handler(nil, usersExceptCurrent)
       }
     }
-  }
-}
-
-extension MUser {
-  // Read
-  class func find(byId objectId: String, completion handler: @escaping ObjectQueryResultHandler2) {
-    let dbRef = Database.database().reference()
-    let collectionName = self.collectionName()
-    
-    let query = dbRef.child("\(collectionName)/\(objectId)")
-    
-    query.observe(.value) { snapshot in
-      if !(snapshot.value is NSDictionary) {
-        handler(nil, NotFoundError)
-      } else {
-        let resultDict = snapshot.value as! NSDictionary
-        handler(resultDict, nil)
-      }
-    } withCancel: { error in
-      handler(nil, error)
-    }
-  }
-  
-  class func query(withClause queryClause: [QueryClausesEnum: AnyObject]? = nil,
-                   completion handler: @escaping CollectionQueryResultHandler2) {
-    let dbRef = Database.database().reference()
-    let collectionName = self.collectionName()
-    
-    var query = dbRef.child(collectionName) as DatabaseQuery
-    
-    if queryClause != nil {
-      if let orderedChildKey = queryClause![.OrderedChildKey] {
-        query = query.queryOrdered(byChild: orderedChildKey as! String)
-      }
-      
-      if let startValue = queryClause![.StartValue] {
-        query = query.queryStarting(atValue: startValue)
-      }
-      
-      if let endValue = queryClause![.EndValue] {
-        query = query.queryEnding(atValue: endValue)
-      }
-      
-      if let exactValue = queryClause![.ExactValue] {
-        query = query.queryEqual(toValue: exactValue)
-      }
-    }
-    
-    query.observeSingleEvent(of: .value) { snapshot in
-      if !(snapshot.value is NSDictionary) {
-        handler([:], NotFoundError)
-      } else {
-        let results = snapshot.value as! [String: NSDictionary]
-        handler(results, nil)
-      }
-    } withCancel: { error in
-      handler([:], error)
-    }
-  }
-  
-  // Write
-  func save(completion handler: UpdateValueHandler? = nil) throws -> String {
-    let (validation, errors) = self.validate()
-    let errorDomain = "Model validation failed"
-    
-    switch validation {
-    case .Valid: break
-    case .InvalidId:
-      throw NSError(domain: errorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "IDs \(errors!) must not be blank"])
-    case .InvalidTimestamp:
-      throw NSError(domain: errorDomain, code: -2, userInfo: [NSLocalizedDescriptionKey: "Timestamps \(errors!) must not be blank"])
-    case .InvalidBlankAttribute:
-      throw NSError(domain: errorDomain, code: -3, userInfo: [NSLocalizedDescriptionKey: "Attributes \(errors!) must not be blank"])
-    }
-    
-    let dbRef = Database.database().reference()
-    let collectionName = type(of: self).collectionName()
-    let primaryKey = type(of: self).primaryKey()
-    
-    var objectId: String
-    
-    if let primaryKeyValue = (self.value(forKey: primaryKey) as? String) {
-      objectId = self._saveAsUpdate(inDb: dbRef, inCollection: collectionName, withId: primaryKeyValue, completion: handler)
-    } else {
-      objectId = try self._saveAsNew(inDb: dbRef, inCollection: collectionName, withPrimaryKey: primaryKey, completion: handler)
-    }
-    
-    return objectId
-  }
-  
-  private func _saveAsUpdate(inDb dbRef: DatabaseReference, inCollection colName: String, withId objectId: String, completion handler: UpdateValueHandler?) -> String {
-    let objectJson = self.toJSON()
-    let updatesManifest = ["/\(colName)/\(objectId)": objectJson]
-    
-    if handler != nil {
-      dbRef.updateChildValues(updatesManifest, withCompletionBlock: handler!)
-    } else {
-      dbRef.updateChildValues(updatesManifest)
-    }
-    
-    return objectId
-  }
-  
-  private func _saveAsNew(inDb dbRef: DatabaseReference, inCollection colName: String, withPrimaryKey primaryKey: String, completion handler: UpdateValueHandler?) throws -> String {
-    guard let objectId = dbRef.child(colName).childByAutoId().key else {
-      let errorDomain = "Firebase database"
-      throw NSError(domain: errorDomain, code: -101, userInfo: [NSLocalizedDescriptionKey: "Couldn't generate auto ID key for new object"])
-    }
-    
-    var objectJson = self.toJSON()
-    objectJson[primaryKey] = objectId
-    
-    let updatesManifest = ["/\(colName)/\(objectId)": objectJson]
-    
-    if handler != nil {
-      dbRef.updateChildValues(updatesManifest, withCompletionBlock: handler!)
-    } else {
-      dbRef.updateChildValues(updatesManifest)
-    }
-    
-    return objectId
   }
 }

@@ -25,7 +25,7 @@ class AddressStore: NSObject {
   fileprivate var _wards: [Ward] = []
   
   func downloadAddresses(_ handler: @escaping DownloadAddressesHandler) {
-    AF.request("https://raw.githubusercontent.com/ThangLeQuoc/vietnamese-provinces-database/refs/heads/master/json/vn_only_simplified_json_generated_data_vn_units_minified.json").response { [weak self] response in
+    AF.request("https://raw.githubusercontent.com/quangtinh2842/PublicStore/refs/heads/main/addresses/vn/vn_only_simplified_json_generated_data_vn_units_minified.json").response { [weak self] response in
       if response.response!.statusCode != 200 {
         handler(NotFoundError)
       } else {

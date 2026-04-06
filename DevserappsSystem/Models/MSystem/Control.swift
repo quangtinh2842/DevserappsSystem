@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 class Control: NSObject, Mappable {
-  @objc var symbolURL: URL?
+  @objc var symbolURL: String?
   @objc var title: String?
   @objc var value: String?
   @objc var valueType: String?
@@ -36,7 +36,7 @@ class Control: NSObject, Mappable {
   }
   
   func mapping(map: Map) {
-    symbolURL    <- (map["symbolURL"], URLTransform())
+    symbolURL    <- map["symbolURL"]
     title        <- map["title"]
     value        <- map["value"]
     valueType    <- map["valueType"]
@@ -51,7 +51,7 @@ class Control: NSObject, Mappable {
   }
   
   func isDifferent(from control: Control?) -> Bool {
-    if self.symbolURL?.absoluteString != control?.symbolURL?.absoluteString {
+    if self.symbolURL != control?.symbolURL {
       return true
     }
     

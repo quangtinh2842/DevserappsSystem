@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Realm
-import RealmSwift
 
 class AboutVC: UITableViewController {
   var shouldSetupViews = true
@@ -50,7 +48,7 @@ class AboutVC: UITableViewController {
   
   private func _populateDataFromAbout() {
     _lblVersion.text = about?.version
-    _lblNResources.text = String(about?.resources.count ?? 0)
+    _lblNResources.text = String(about?.resources?.count ?? 0)
   }
   
   @IBAction func handleBackBtnTapped(_ sender: Any) {
@@ -62,8 +60,8 @@ extension AboutVC {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.section == 1 && indexPath.row == 0 {
       let resourcesVC = StoryboardHelper.newResourcesVC()
-      if SettingsStore.settings.about?.resources != nil {
-        resourcesVC.resources = Array(SettingsStore.settings.about!.resources)
+      if SettingsStore.currentSettings.about?.resources != nil {
+        resourcesVC.resources = Array(SettingsStore.currentSettings.about!.resources ?? [])
       }
       navigationController?.pushViewController(resourcesVC, animated: true)
     }

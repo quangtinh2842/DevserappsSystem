@@ -9,8 +9,16 @@ import Foundation
 import ObjectMapper
 
 class Context: NSObject, Mappable {
-  @objc var symbolURL: URL?
+  @objc var symbolURL: String?
   @objc var title: String?
+  
+  var getSymbolURL: URL? {
+    if symbolURL == nil {
+      return nil
+    } else {
+      return URL(string: symbolURL!)
+    }
+  }
   
   init(context: Context) {
     super.init()
@@ -33,11 +41,11 @@ class Context: NSObject, Mappable {
   
   func mapping(map: Map) {
     title        <- map["title"]
-    symbolURL    <- (map["symbolURL"], URLTransform())
+    symbolURL    <- map["symbolURL"]
   }
   
   override var description: String {
-    return "<Context Title: \(self.title ?? "N/A") - Symbol URL: \(self.symbolURL?.absoluteString ?? "N/A")>"
+    return "<Context Title: \(self.title ?? "N/A") - Symbol URL: \(self.symbolURL ?? "N/A")>"
   }
   
   func validate() -> (ModelValidationError, String?) {
@@ -49,7 +57,7 @@ class Context: NSObject, Mappable {
       return true
     }
     
-    if self.symbolURL?.absoluteString != context?.symbolURL?.absoluteString {
+    if self.symbolURL != context?.symbolURL {
       return true
     }
     

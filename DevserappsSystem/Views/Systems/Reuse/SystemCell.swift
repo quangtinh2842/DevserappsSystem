@@ -26,7 +26,7 @@ class SystemCell: UITableViewCell {
   func updateCell(withData system: MSystem) {
     _systemData = system
     
-    if let photoURL = system.photoURL {
+    if let photoURL = system.getPhotoURL {
       _imgPhoto.af.setImage(withURL: photoURL)
     } else {
       _imgPhoto.image = UIImage.init()

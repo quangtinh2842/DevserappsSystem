@@ -9,14 +9,8 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-struct CConstants {
-  static let kAesKey = ""
-  static let kAesIv = ""
-}
-
 typealias ObjectQueryResultHandler2 = (_ result: NSDictionary?, _ error: Error?) -> ()
 typealias ObjectQueryResultHandler = (_ result: MBase?, _ error: Error?) -> ()
-typealias CollectionQueryResultHandler2 = (_ results: [String: NSDictionary], _ error: Error?) -> ()
 typealias CollectionQueryResultHandler = (_ results: [MBase], _ error: Error?) -> ()
 typealias StatusReturnHandler = (_ status: Bool, _ error: Error?) -> ()
 typealias ErrorHandler = (Error?) -> ()

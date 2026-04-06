@@ -93,11 +93,11 @@ extension ProblemsToProviderVC {
 extension ProblemsToProviderVC: ProblemToProviderDelegate {
   func problemToProviderVC(problemToProviderVC: ProblemToProviderVC, didSendProblem sentProblem: Problem) {
     if title == "App feedbacks" {
-      problems = SettingsStore.settings.appFeedbacks
+      problems = SettingsStore.currentSettings.appFeedbacks
     } else if title == "Bug reports" {
-      problems = SettingsStore.settings.bugReports
+      problems = SettingsStore.currentSettings.bugReports
     } else if title == "Help & Support requests" {
-      problems = SettingsStore.settings.helpAndSupportRequests
+      problems = SettingsStore.currentSettings.helpAndSupportRequests
     }
     
     tableView.reloadData()

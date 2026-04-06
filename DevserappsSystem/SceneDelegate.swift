@@ -22,15 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   private var _noConnectionVC: NoConnectionVC?
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    guard let _ = (scene as? UIWindowScene) else { return }
+//    guard let _ = (scene as? UIWindowScene) else { return }
     
-//    guard let windowScene = (scene as? UIWindowScene) else { return }
-//    window = UIWindow(windowScene: windowScene)
-//    _checkCurrentUserToShowRootView()
-//    _setup()
-    
-    
-    RealmManager.sharedManager.realmInstance
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    window = UIWindow(windowScene: windowScene)
+    _checkCurrentUserToShowRootView()
+    _setup()
   }
   
   private func _setup() {

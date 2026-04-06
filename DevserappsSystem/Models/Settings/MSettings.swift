@@ -9,7 +9,6 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 import ObjectMapper
-import RealmSwift
 
 class MSettings: MBase {
   @objc dynamic var id: String?
@@ -22,10 +21,6 @@ class MSettings: MBase {
   var appFeedbacks: [Problem] = []
   var bugReports: [Problem] = []
   var helpAndSupportRequests: [Problem] = []
-  
-//  override class func ignoredProperties() -> [String] {
-//    return ["appFeedbacks", "bugReports", "helpAndSupportRequests"]
-//  }
   
   override class func collectionName() -> String {
     return "settings_collection"

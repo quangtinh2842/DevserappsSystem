@@ -8,7 +8,6 @@
 import UIKit
 import ESPullToRefresh
 import ObjectMapper
-import RealmSwift
 import FirebaseDatabase
 
 class TestViewController: UIViewController {

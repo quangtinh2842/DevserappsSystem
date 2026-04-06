@@ -7,7 +7,6 @@
 
 import Foundation
 import ObjectMapper
-import RealmSwift
 
 class MSystemTopic: MBase {
   
@@ -32,7 +31,7 @@ class MSystemTopic: MBase {
     systemTopicID <- map["systemTopicID"]
   }
   
-  func collectionName() -> String {
+  override class func collectionName() -> String {
     return "system_topics"
   }
   

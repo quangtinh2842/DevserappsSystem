@@ -11,9 +11,17 @@ import ObjectMapper
 class MSystem: MBase {
   @objc dynamic var id: String?
   var displayName: String?
-  var photoURL: URL?
+  var photoURL: String?
   var address: Address?
   var name: String?
+  
+  var getPhotoURL: URL? {
+    if photoURL == nil {
+      return nil
+    } else {
+      return URL(string: photoURL!)
+    }
+  }
   
   override class func collectionName() -> String {
     return "system_collection"
@@ -55,7 +63,7 @@ class MSystem: MBase {
   override func mapping(map: Map) {
     id            <- map["id"]
     displayName   <- map["displayName"]
-    photoURL      <- (map["photoURL"], URLTransform())
+    photoURL      <- map["photoURL"]
     address     <- map["address"]
     name          <- map["name"]
   }
@@ -85,7 +93,7 @@ class MSystem: MBase {
       return true
     }
     
-    if self.photoURL?.absoluteString != system?.photoURL?.absoluteString {
+    if self.photoURL != system?.photoURL {
       return true
     }
     

@@ -77,9 +77,9 @@ extension ResourcesVC {
   }
   
   @objc private func _handleDetailBtnTapped(_ sender: UIButton) {
-    let alertController = UIAlertController(title: resources[sender.tag].url?.absoluteString, message: nil, preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: resources[sender.tag].url, message: nil, preferredStyle: .actionSheet)
     let copyAction = UIAlertAction(title: "Copy", style: .default) { [weak self] _ in
-      UIPasteboard.general.string = self?.resources[sender.tag].url?.absoluteString
+      UIPasteboard.general.string = self?.resources[sender.tag].url
       self?.navigationController?.view.makeToast("copied", duration: 2.0, position: .bottom)
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
