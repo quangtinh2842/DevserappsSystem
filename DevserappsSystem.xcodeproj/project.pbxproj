@@ -24,7 +24,6 @@
 		FA14F1F72D897CE8004F73C4 /* BasicControlPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14F1F62D897CE8004F73C4 /* BasicControlPopupViewController.swift */; };
 		FA1C8D442D82CCC900F318A4 /* SystemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D432D82CCC900F318A4 /* SystemCell.swift */; };
 		FA1C8D462D82D05D00F318A4 /* MSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D452D82D05D00F318A4 /* MSystem.swift */; };
-		FA1C8D482D82D79000F318A4 /* MSystemTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C8D472D82D79000F318A4 /* MSystemTopic.swift */; };
 		FA1D39CA2D79A7150020C977 /* ESPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = FA1D39C92D79A7150020C977 /* ESPullToRefresh */; };
 		FA1D39CC2D79DFF50020C977 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D39CB2D79DFF50020C977 /* UserStore.swift */; };
 		FA1EF9C72D9D291C009A247C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1EF9C62D9D291B009A247C /* About.swift */; };
@@ -78,6 +77,9 @@
 		FA5E4CEF2D74A87D009C223A /* KRProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E4CEE2D74A87D009C223A /* KRProgressHUD */; };
 		FA5E4CF22D74A983009C223A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E4CF12D74A983009C223A /* Toast */; };
 		FA5E4CF42D74BBB8009C223A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E4CF32D74BBB8009C223A /* MenuViewController.swift */; };
+		FA6647512F863B370089ED14 /* MNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6647502F863B370089ED14 /* MNotification.swift */; };
+		FA6647542F863D550089ED14 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6647532F863D550089ED14 /* NotificationCell.swift */; };
+		FA67AA172F83FB3700D2B061 /* InitialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67AA162F83FB3700D2B061 /* InitialManager.swift */; };
 		FA6D97872D7CA1EA00C1D8B2 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D97862D7CA1EA00C1D8B2 /* AddressViewController.swift */; };
 		FA7EFDA72D7AEECE002C0769 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EFDA62D7AEECE002C0769 /* StoryboardHelper.swift */; };
 		FA7EFDA92D7B2A64002C0769 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EFDA82D7B2A64002C0769 /* NameViewController.swift */; };
@@ -86,6 +88,10 @@
 		FA8CFDC02D9E7DA400782E61 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFDBF2D9E7DA400782E61 /* ResourceCell.swift */; };
 		FA8D79902F67C51A0060B9E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8D798F2F67C5190060B9E0 /* GoogleService-Info.plist */; };
 		FA95F04D2D8E65C2006022DC /* ErasedListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95F04C2D8E65C2006022DC /* ErasedListPopupVC.swift */; };
+		FA9AC86C2F86475A005177D4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC86B2F86475A005177D4 /* Date.swift */; };
+		FA9AC86E2F86477F005177D4 /* ResourcesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC86D2F86477F005177D4 /* ResourcesStore.swift */; };
+		FA9AC8712F865159005177D4 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC8702F865159005177D4 /* NotificationVC.swift */; };
+		FA9AC8732F86B4BB005177D4 /* NotificationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC8722F86B4BB005177D4 /* NotificationsStore.swift */; };
 		FA9B031B2D92F3DB00CF6E02 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B031A2D92F3DB00CF6E02 /* SettingsStore.swift */; };
 		FAB4C66F2D9A43E40052DD83 /* NotificationsSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C66E2D9A43E40052DD83 /* NotificationsSettingsVC.swift */; };
 		FAB4C6712D9A443F0052DD83 /* ProblemsToProviderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4C6702D9A443F0052DD83 /* ProblemsToProviderVC.swift */; };
@@ -127,7 +133,6 @@
 		FA14F1F62D897CE8004F73C4 /* BasicControlPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlPopupViewController.swift; sourceTree = "<group>"; };
 		FA1C8D432D82CCC900F318A4 /* SystemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCell.swift; sourceTree = "<group>"; };
 		FA1C8D452D82D05D00F318A4 /* MSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSystem.swift; sourceTree = "<group>"; };
-		FA1C8D472D82D79000F318A4 /* MSystemTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSystemTopic.swift; sourceTree = "<group>"; };
 		FA1D39CB2D79DFF50020C977 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		FA1EF9C62D9D291B009A247C /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		FA1F22792D75B6800083BB10 /* TankSystemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankSystemsVC.swift; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 		FA4C1CAF2D7609FA001C6053 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		FA5E4CEB2D74A362009C223A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA5E4CF32D74BBB8009C223A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FA6647502F863B370089ED14 /* MNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNotification.swift; sourceTree = "<group>"; };
+		FA6647532F863D550089ED14 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		FA67AA162F83FB3700D2B061 /* InitialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialManager.swift; sourceTree = "<group>"; };
 		FA6D97862D7CA1EA00C1D8B2 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		FA7EFDA62D7AEECE002C0769 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		FA7EFDA82D7B2A64002C0769 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +184,10 @@
 		FA8CFDBF2D9E7DA400782E61 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		FA8D798F2F67C5190060B9E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA95F04C2D8E65C2006022DC /* ErasedListPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasedListPopupVC.swift; sourceTree = "<group>"; };
+		FA9AC86B2F86475A005177D4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FA9AC86D2F86477F005177D4 /* ResourcesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesStore.swift; sourceTree = "<group>"; };
+		FA9AC8702F865159005177D4 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		FA9AC8722F86B4BB005177D4 /* NotificationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsStore.swift; sourceTree = "<group>"; };
 		FA9B031A2D92F3DB00CF6E02 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		FAB4C66E2D9A43E40052DD83 /* NotificationsSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsVC.swift; sourceTree = "<group>"; };
 		FAB4C6702D9A443F0052DD83 /* ProblemsToProviderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsToProviderVC.swift; sourceTree = "<group>"; };
@@ -268,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				FA14E44E2D9177C1000E259F /* NC */,
+				FA9AC86F2F86514C005177D4 /* VC */,
+				FA6647522F863D300089ED14 /* Reuse */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -412,11 +426,15 @@
 			isa = PBXGroup;
 			children = (
 				FA27550A2D76F55C00487E04 /* CommonTypes.swift */,
+				FA9AC86D2F86477F005177D4 /* ResourcesStore.swift */,
+				FA9AC86A2F86474C005177D4 /* Extensions */,
 				FA1D39CB2D79DFF50020C977 /* UserStore.swift */,
 				FA9B031A2D92F3DB00CF6E02 /* SettingsStore.swift */,
+				FA9AC8722F86B4BB005177D4 /* NotificationsStore.swift */,
 				FA3DBDEF2D7F59030046CD3A /* AddressStore.swift */,
 				FA24BFE32D93A9D30024FA53 /* CountryCodeStore.swift */,
 				FA7EFDA62D7AEECE002C0769 /* StoryboardHelper.swift */,
+				FA67AA162F83FB3700D2B061 /* InitialManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -507,9 +525,9 @@
 			isa = PBXGroup;
 			children = (
 				FA0B48692D783C0300A9E9DB /* MBase.swift */,
+				FA6647502F863B370089ED14 /* MNotification.swift */,
 				FA2D298E2D843C4500C93D5C /* MUser */,
 				FA2D298F2D843C5600C93D5C /* MSystem */,
-				FA1C8D472D82D79000F318A4 /* MSystemTopic.swift */,
 				FA3448A82D92EC6800414CB3 /* Settings */,
 			);
 			path = Models;
@@ -559,6 +577,30 @@
 				FA5E4CEB2D74A362009C223A /* MainTabBarController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		FA6647522F863D300089ED14 /* Reuse */ = {
+			isa = PBXGroup;
+			children = (
+				FA6647532F863D550089ED14 /* NotificationCell.swift */,
+			);
+			path = Reuse;
+			sourceTree = "<group>";
+		};
+		FA9AC86A2F86474C005177D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AC86B2F86475A005177D4 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA9AC86F2F86514C005177D4 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AC8702F865159005177D4 /* NotificationVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		FAF599A12D89BBF2007F1B4B /* Device */ = {
@@ -683,7 +725,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA01482C2D8F9A9C00E17A6D /* ScheduliesVC.swift in Sources */,
-				FA1C8D482D82D79000F318A4 /* MSystemTopic.swift in Sources */,
 				FA349C252DA80DC30068CBE2 /* SensorPopupVC.swift in Sources */,
 				FA2D29972D843D6D00C93D5C /* Sensor.swift in Sources */,
 				FAD8F3742D87119D00E33C86 /* EraseViewController.swift in Sources */,
@@ -691,6 +732,7 @@
 				FA3412F82D7D998D004C031C /* PinMapViewController.swift in Sources */,
 				FA4B86DA2D743828005F1A69 /* SceneDelegate.swift in Sources */,
 				FA2D29992D843DF900C93D5C /* Context.swift in Sources */,
+				FA67AA172F83FB3700D2B061 /* InitialManager.swift in Sources */,
 				FA1C8D462D82D05D00F318A4 /* MSystem.swift in Sources */,
 				FAFFAC442D9149F500DBE348 /* ScheduleCell.swift in Sources */,
 				FAEC67612D8C071300FA05A7 /* OtherSystemsVC.swift in Sources */,
@@ -708,6 +750,7 @@
 				FAF599A52D89C6F2007F1B4B /* HistoryCell.swift in Sources */,
 				FA3DA05D2D7F39A0008F2CEA /* SearchPopupViewController.swift in Sources */,
 				FAF494382DAF53C40051EE99 /* CountryCodesVC.swift in Sources */,
+				FA9AC8712F865159005177D4 /* NotificationVC.swift in Sources */,
 				FA0B486F2D78513900A9E9DB /* MUser.swift in Sources */,
 				FAEC675F2D8C071100FA05A7 /* HomeSystemsVC.swift in Sources */,
 				FA079C802DA17398006615B4 /* ProblemToProviderCell.swift in Sources */,
@@ -732,7 +775,11 @@
 				FA2D29852D84361500C93D5C /* SensorCell.swift in Sources */,
 				FA4C1CB02D7609FA001C6053 /* PasswordResetViewController.swift in Sources */,
 				FAF599A72D89C79F007F1B4B /* HistoryViewController.swift in Sources */,
+				FA9AC86C2F86475A005177D4 /* Date.swift in Sources */,
 				FA2C49772D8ABC2200F3CF52 /* TimeToActiveVC.swift in Sources */,
+				FA6647542F863D550089ED14 /* NotificationCell.swift in Sources */,
+				FA9AC8732F86B4BB005177D4 /* NotificationsStore.swift in Sources */,
+				FA6647512F863B370089ED14 /* MNotification.swift in Sources */,
 				FA0B486A2D783C0300A9E9DB /* MBase.swift in Sources */,
 				FA7EFDA72D7AEECE002C0769 /* StoryboardHelper.swift in Sources */,
 				FA0F2C462D9FD80F0022EAD3 /* Problem.swift in Sources */,
@@ -742,6 +789,7 @@
 				FA1EF9C72D9D291C009A247C /* About.swift in Sources */,
 				FA2C76672D8A706E00C0E7B1 /* ScheduleViewController.swift in Sources */,
 				FA01FC722D7372590005E15D /* LogInViewController.swift in Sources */,
+				FA9AC86E2F86477F005177D4 /* ResourcesStore.swift in Sources */,
 				FA24BFE42D93A9D30024FA53 /* CountryCodeStore.swift in Sources */,
 				FA2D298D2D843A1500C93D5C /* SystemCollectionHeaderView.swift in Sources */,
 				FA4C1CAE2D7609F4001C6053 /* EmailVerificationViewController.swift in Sources */,
@@ -908,7 +956,7 @@
 				DEVELOPMENT_TEAM = R3XPH5TX6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DevserappsSystem/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Dsystem;
+				INFOPLIST_KEY_CFBundleDisplayName = DSystem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -939,7 +987,7 @@
 				DEVELOPMENT_TEAM = R3XPH5TX6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DevserappsSystem/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Dsystem;
+				INFOPLIST_KEY_CFBundleDisplayName = DSystem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

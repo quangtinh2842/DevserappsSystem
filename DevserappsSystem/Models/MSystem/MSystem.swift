@@ -8,12 +8,19 @@
 import Foundation
 import ObjectMapper
 
+enum SystemCategories: String {
+  case Home = "Home"
+  case Tank = "Tank"
+  case Other = "Other"
+}
+
 class MSystem: MBase {
   @objc dynamic var id: String?
+  @objc dynamic var uid: String?
   var displayName: String?
   var photoURL: String?
   var address: Address?
-  var name: String?
+  var category: String?
   
   var getPhotoURL: URL? {
     if photoURL == nil {
@@ -40,17 +47,18 @@ class MSystem: MBase {
   init(systemParam: MSystem) {
     super.init()
     self.id = systemParam.id
+    self.uid = systemParam.uid
     self.displayName = systemParam.displayName
     self.photoURL = systemParam.photoURL
     self.address = systemParam.address
-    self.name = systemParam.name
+    self.category = systemParam.category
   }
   
   required init?(map: Map) {
     super.init()
 //    super.init(map: map)
     
-    let attributes = ["id", "name"]
+    let attributes = ["id"]
     let validations = attributes.map {
       map[$0].currentValue != nil
     }.reduce(true) { $0 && $1 }
@@ -62,23 +70,25 @@ class MSystem: MBase {
   
   override func mapping(map: Map) {
     id            <- map["id"]
+    uid           <- map["uid"]
     displayName   <- map["displayName"]
     photoURL      <- map["photoURL"]
-    address     <- map["address"]
-    name          <- map["name"]
+    address       <- map["address"]
+    category      <- map["category"]
   }
   
   override var description: String {
-    return "<MSystem Id: \(self.id!) - Name: \(self.name ?? "N/A")>"
+    return "<MSystem Id: \(self.id!)>"
   }
   
   override func validate() -> (ModelValidationError, String?) {
-    if self.id == nil || self.id!.isEmpty {
-      return (.InvalidId, "id")
+    if self.id == nil || self.id!.isEmpty ||
+        self.uid == nil || self.uid!.isEmpty {
+      return (.InvalidId, "id, uid")
     }
     
-    if self.name == nil || self.name!.isEmpty {
-      return (.InvalidBlankAttribute, "name")
+    if self.category == nil || self.category!.isEmpty {
+      return (.InvalidBlankAttribute, "category")
     }
     
     return (.Valid, nil)
@@ -105,10 +115,6 @@ class MSystem: MBase {
       return true
     }
     
-    if self.name != system?.name {
-      return true
-    }
-    
     return false
   }
   
@@ -116,43 +122,15 @@ class MSystem: MBase {
     let currentUser = UserStore.currentUser
     
     let queryClause: [QueryClausesEnum: AnyObject] = [
-      .OrderedChildKey: currentUser!.uid! as AnyObject,
-      .ExactValue: true as AnyObject,
+      .OrderedChildKey: "uid" as AnyObject,
+      .ExactValue: currentUser!.uid! as AnyObject,
     ]
     
-    MSystemTopic.query(withClause: queryClause) { results, error in
-      if error != nil {
-        handler([], error)
-        return
-      }
-      
-      let topics = results as! [MSystemTopic]
-      let systemIds = topics.filter { $0.systemTopicID != nil }.map { $0.systemTopicID! }
-      
-      if systemIds.isEmpty {
-        handler([], NotFoundError)
-        return
-      }
-      
-      let uniqueSystemIdsSet = Set<String>(systemIds)
-      let uniqueSystemIds = [String](uniqueSystemIdsSet).sorted()
-      
-      self.retrieveTopicSystems(fromIds: uniqueSystemIds, completion: handler)
-    }
-  }
-  
-  class func retrieveTopicSystems(fromIds systemIds: [String], completion handler: @escaping CollectionQueryResultHandler) {
-    let queryClause: [QueryClausesEnum: AnyObject] = [
-      .OrderedChildKey: "id" as AnyObject,
-      .StartValue: systemIds.first! as AnyObject,
-      .EndValue: systemIds.last! as AnyObject
-    ]
-    
-    self.query(withClause: queryClause) { (systems, error) in
-      if error != nil {
+    MSystem.query(withClause: queryClause) { results, error in
+      if let error = error {
         handler([], error)
       } else {
-        handler(systems, nil)
+        handler(results, nil)
       }
     }
   }

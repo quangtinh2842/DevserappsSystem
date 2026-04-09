@@ -26,7 +26,7 @@ class SystemViewController: UICollectionViewController {
     
     _customNavAndTabBar()
   }
-
+  
   private func _refreshViews() {
   }
   

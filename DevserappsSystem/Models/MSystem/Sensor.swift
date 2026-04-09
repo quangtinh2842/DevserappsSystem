@@ -53,7 +53,7 @@ class Sensor: NSObject, Mappable {
     symbolURL    <- map["symbolURL"]
     valueType    <- map["valueType"]
     unit         <- map["unit"]
-    time         <- map["time"]
+    time         <- (map["time"], DateTransform())
   }
   
   override var description: String {

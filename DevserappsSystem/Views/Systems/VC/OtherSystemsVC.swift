@@ -46,7 +46,7 @@ class OtherSystemsVC: UITableViewController {
         self?._presentBasicAlert(title: error!.localizedDescription, message: nil)
       }
       
-      self?._systems = results as! [MSystem]
+      self?._systems = (results as! [MSystem]).filter { $0.category == SystemCategories.Other.rawValue }
       
       self?._populateSystemsData()
       self?.refreshControl?.endRefreshing()

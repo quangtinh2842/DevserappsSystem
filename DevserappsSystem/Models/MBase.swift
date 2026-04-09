@@ -41,6 +41,38 @@ class MBase: NSObject, Mappable {
     fatalError("This method must be overridden")
   }
   
+  class func findAsync(byId objectId: String) async throws -> MBase? {
+    return try await withCheckedThrowingContinuation { continuation in
+      findOneTime(byId: objectId) { result, error in
+        if let error = error {
+          continuation.resume(throwing: error)
+        } else {
+          continuation.resume(returning: result)
+        }
+      }
+    }
+  }
+  
+  class func findOneTime(byId objectId: String, completion handler: @escaping ObjectQueryResultHandler) {
+    let dbRef = Database.database().reference()
+    let collectionName = self.collectionName()
+    
+    let query = dbRef.child("\(collectionName)/\(objectId)")
+    
+    query.observeSingleEvent(of: .value) { snapshot in
+      if !(snapshot.value is NSDictionary) {
+        handler(nil, NotFoundError)
+        return
+      }
+      
+      let resultDict = snapshot.value as! NSDictionary
+      let resultModel = self.mapObject(jsonObject: resultDict)
+      handler(resultModel, nil)
+    } withCancel: { error in
+      handler(nil, error)
+    }
+  }
+  
   // Read
   class func find(byId objectId: String, completion handler: @escaping ObjectQueryResultHandler) {
     let dbRef = Database.database().reference()
@@ -107,6 +139,23 @@ class MBase: NSObject, Mappable {
       handler(resultModels, nil)
     } withCancel: { error in
       handler([], error)
+    }
+  }
+  
+  func saveAsync() async throws -> String {
+    return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<String, Error>) in
+      do {
+        var id = ""
+        id = try self.save { error, _ in
+          if let error = error {
+            continuation.resume(throwing: error)
+          } else {
+            continuation.resume(returning: id)
+          }
+        }
+      } catch {
+        continuation.resume(throwing: error)
+      }
     }
   }
   

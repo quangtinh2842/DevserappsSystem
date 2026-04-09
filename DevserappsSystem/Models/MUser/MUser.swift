@@ -137,7 +137,7 @@ class MUser: MBase {
       return true
     }
     
-    if self.name != user?.name {
+    if let name = self.name, name.isDifferent(from: user?.name) {
       return true
     }
     

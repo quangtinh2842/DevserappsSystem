@@ -162,6 +162,7 @@ class ProfileViewController: UITableViewController {
     }
   }
   
+  // MARK: -
   private func _didSaveProfileSuccessfullyHandler() {
     _savedUser = MUser(user: _editedUser)
     UserStore.currentUser = MUser(user: _savedUser)
@@ -337,8 +338,6 @@ extension ProfileViewController: AddressDelegate {
 
 extension ProfileViewController: EraseDelegate {
   func eraseViewController(eraseVC: EraseViewController, didEraseData newUserData: MUser) {
-    _savedUser = MUser(user: newUserData)
-    
     if newUserData.photoURL == nil {
       _editedUser.photoURL = nil
       _imgProfilePhoto.image = UIImage(systemName: "person.circle")
@@ -369,6 +368,10 @@ extension ProfileViewController: EraseDelegate {
       _editedUser.address = nil
       _lblAddress.text = nil
     }
+    
+    _savedUser = MUser(user: newUserData)
+    UserStore.currentUser = MUser(user: _savedUser)
+    delegate?.profileViewController?(profileVC: self, didEditProfile: MUser(user: _savedUser))
   }
 }
 

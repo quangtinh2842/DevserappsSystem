@@ -184,6 +184,11 @@ class StoryboardHelper {
     return (vc as! NoConnectionVC)
   }
   
+  static func newNotificationVC() -> NotificationVC {
+    let vc = newVC(withID: MainSbVCID.NotificationVCID.rawValue)
+    return (vc as! NotificationVC)
+  }
+  
   // MARK: - Device
   static func newDevice() -> UIStoryboard {
     return UIStoryboard(name: "Device", bundle: nil)

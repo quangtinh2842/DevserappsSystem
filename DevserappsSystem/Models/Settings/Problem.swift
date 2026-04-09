@@ -43,6 +43,6 @@ class Problem: NSObject, Mappable {
     subject     <- map["subject"]
     title       <- map["title"]
     content     <- map["content"]
-    time        <- map["time"]
+    time        <- (map["time"], DateTransform())
   }
 }

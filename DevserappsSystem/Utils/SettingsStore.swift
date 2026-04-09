@@ -8,7 +8,7 @@
 import Foundation
 
 struct SettingsStore {
-  static var currentSettings: MSettings! = initialSettings() // default for test
+  static var currentSettings: MSettings!
   
   static func initialSettings() -> MSettings {
     let rst = MSettings()

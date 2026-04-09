@@ -42,14 +42,15 @@ class HomeSystemsVC: UITableViewController {
   
   @objc private func _refreshAndPopulateSystemsData() {
     MSystem.allSystemsForCurrentUser { [weak self] results, error in
+      self?.refreshControl?.endRefreshing()
+      
       if error != nil {
         self?._presentBasicAlert(title: error!.localizedDescription, message: nil)
+        return
       }
       
-      self?._systems = results as! [MSystem]
-      
+      self?._systems = (results as! [MSystem]).filter { $0.category == SystemCategories.Home.rawValue }
       self?._populateSystemsData()
-      self?.refreshControl?.endRefreshing()
     }
   }
   

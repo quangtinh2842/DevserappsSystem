@@ -76,6 +76,7 @@ enum MainSbVCID: String {
   case ResourcesVCID = "ResourcesVCID"
   case SensorPopupVCID = "SensorPopupVCID"
   case NoConnectionVCID = "NoConnectionVCID"
+  case NotificationVCID = "NotificationVCID"
 }
 
 enum DeviceSbVCID: String {
@@ -101,6 +102,7 @@ enum ReuseID: String {
   case CountryCodeCell = "CountryCodeCellID"
   case ResourceCell = "ResourceCellID"
   case ProblemToProviderCell = "ProblemToProviderCellID"
+  case NotificationCell = "NotificationCellID"
 }
 
 enum SegueID: String {

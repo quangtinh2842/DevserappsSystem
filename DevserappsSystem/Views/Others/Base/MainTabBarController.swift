@@ -6,17 +6,49 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class MainTabBarController: UITabBarController {  
   override func viewDidLoad() {
     super.viewDidLoad()
     _setupViews()
+    _doSomethingAfterSignIn()
   }
   
 //  override func viewWillLayoutSubviews() { // consider to remove
 //    super.viewWillLayoutSubviews()
 //    self.selectedIndex = 0
 //  }
+  
+  private func _doSomethingAfterSignIn() {
+    KRProgressHUD.show()
+    Task {
+      do {
+        try await InitialManager.pushAndPullSomething()
+        _populateData()
+      } catch {
+        _presentHardToHandleErrorVC()
+      }
+      KRProgressHUD.dismiss()
+    }
+  }
+  
+  private func _populateData() {
+    _updateBadgeCountForNotificationsTab()
+  }
+  
+  private func _updateBadgeCountForNotificationsTab() {
+    let unreadCount = NotificationsStore.notifications.filter { !$0.wasRead }.count
+    let badgeValue = unreadCount > 0 ? "\(unreadCount)" : nil
+            
+    for subNC in self.viewControllers! {
+      let navigation = subNC as! UINavigationController
+
+      if (navigation.viewControllers.first as? NotificationsVC) != nil {
+        navigation.tabBarItem.badgeValue = badgeValue
+      }
+    }
+  }
   
   private func _setupViews() {
     self.tabBar.items?.first?.title = "●"
@@ -49,6 +81,12 @@ class MainTabBarController: UITabBarController {
       let navigation = subVC as! UINavigationController
       navigation.popToRootViewController(animated: false)
     }
+  }
+  
+  private func _presentHardToHandleErrorVC() {
+    let scene = UIApplication.shared.connectedScenes.first as! UIWindowScene
+    let sceneDelegate = scene.delegate as! SceneDelegate
+    sceneDelegate.showHardToHandleErrorVC()
   }
 }
 
