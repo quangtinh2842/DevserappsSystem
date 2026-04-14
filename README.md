@@ -9,4 +9,8 @@ Các chức năng vẫn trong quá trình phát triển:
    + Sub tab Settings -> Language
    + Sub tab Settings -> About -> Version
 
-<img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.44.37.png">
+<p align="center">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.44.37.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.44.37.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.44.37.png" width="250">
+</p>
