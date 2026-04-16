@@ -33,4 +33,17 @@ Các chức năng vẫn trong quá trình phát triển:
   <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.55.49.png" width="250">
   <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.56.04.png" width="250">
   <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.56.14.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.21.44.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.22.26.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.22.56.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.23.30.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.24.15.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.25.00.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.25.06.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.25.23.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.25.54.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.26.20.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.26.47.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.28.56.png" width="250">
+  <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-16 at 23.29.10.png" width="250">
 </p>
