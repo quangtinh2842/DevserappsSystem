@@ -8,7 +8,7 @@ Các chức năng vẫn trong quá trình phát triển:
    + Sub tab Settings -> Appearance
    + Sub tab Settings -> Language
    + Sub tab Settings -> About -> Version
-   + Sub tab Profile -> Address (dữ liệu địa chỉ đã cũ)
+   + Sub tab Profile -> Address (loại địa chỉ cũ)
 
 <p align="center">
   <img src="Scenes/Simulator Screen Shot - iPhone 14 Pro Max - 2026-04-14 at 16.44.37.png" width="250">
