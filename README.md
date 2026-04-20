@@ -1,4 +1,6 @@
 Các chức năng vẫn trong quá trình phát triển:
+
+ - Đăng nhập chưa hoàn thiện
  - Ở Tab Home
  - Ở Tab Schedules
  - Ở Tab Notifications:
