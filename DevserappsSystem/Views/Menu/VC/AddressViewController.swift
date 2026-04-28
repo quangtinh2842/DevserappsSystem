@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import KRProgressHUD
+import SwiftUI
 
 @objc protocol AddressDelegate: NSObjectProtocol {
   @objc optional func addressViewController(addressVC: AddressViewController, didEditAddress editedAddressData: Address)
@@ -162,7 +163,7 @@ extension AddressViewController {
         let indicator = UIActivityIndicatorView()
         let provinceCell = self.tableView(self.tableView, cellForRowAt: indexPath)
         indicator.frame = CGRect(x: 5, y: 5, width: 24, height: 24)
-        indicator.color = .tintColor
+        indicator.color = self.view.tintColor
         let indicatorContainer = UIView(frame: CGRect(x: 0, y: 0, width: 34, height: 34))
         indicatorContainer.addSubview(indicator)
         provinceCell.accessoryView = indicatorContainer
@@ -225,7 +226,7 @@ extension AddressViewController {
       } else if indexPath.row == 2 && _editedAddress.district == nil {
         accessoryView.tintColor = .gray
       } else {
-        accessoryView.tintColor = .tintColor
+        accessoryView.tintColor = self.view.tintColor
       }
       cell.accessoryView = accessoryView
       return cell

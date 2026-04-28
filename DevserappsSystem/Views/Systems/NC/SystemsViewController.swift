@@ -48,6 +48,12 @@ class SystemsViewController: UIViewController {
   }
   
   private func _refreshViews() {
+    let homeSystemsVC = StoryboardHelper.newHomeSystemsVC()
+    let tankSystemsVC = StoryboardHelper.newTankSystemsVC()
+    let otherSystemsVC = StoryboardHelper.newOtherSystemsVC()
+    _subVCs = [homeSystemsVC, tankSystemsVC, otherSystemsVC]
+    _vPager.reload()
+    
     _vPager.select(index: 0, animated: false)
   }
 }
@@ -75,6 +81,6 @@ extension SystemsViewController: LZViewPagerDelegate, LZViewPagerDataSource {
   }
   
   func colorForIndicator(at index: Int) -> UIColor {
-    return .tintColor
+    return UIColor.tintColor
   }
 }

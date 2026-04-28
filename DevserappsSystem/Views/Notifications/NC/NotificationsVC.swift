@@ -47,6 +47,10 @@ class NotificationsVC: UITableViewController {
   }
   
   private func _refreshViews() {
+    if shouldRefreshViews {
+      NotificationsStore.notifications = []
+      _populateNotificationsData()
+    }
     _refreshAndPopulateNotificationsData()
   }
   

@@ -97,7 +97,7 @@ class LanguageVC: UITableViewController {
     saveBtn.setTitle("Save", for: .normal)
     saveBtn.titleLabel?.font = .systemFont(ofSize: 17)
     saveBtn.setTitleColor(.white, for: .normal)
-    saveBtn.backgroundColor = .tintColor
+    saveBtn.backgroundColor = self.view.tintColor
     saveBtn.layer.cornerRadius = 25
     saveBtn.layer.masksToBounds = true
     saveBtn.addTarget(self, action: #selector(_handleSaveBtnTapped), for: .touchUpInside)

@@ -35,6 +35,14 @@ class MenuViewController: UIViewController {
   }
   
   private func _refreshViews() {
+    let settingsVC = StoryboardHelper.newSettingsVC()
+    settingsVC.delegate = self
+    let accountVC = StoryboardHelper.newAccountVC()
+    accountVC.delegate = self
+    
+    _subVCs = [settingsVC, accountVC]
+    _vPager.reload()
+    
     _vPager.select(index: 0, animated: false)
     _populateCurrentUserData()
   }
